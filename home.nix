@@ -98,6 +98,7 @@
       pavucontrol
       slack
       freelens-bin
+      logseq
     ];
 
     fonts.fontconfig.enable = true;
