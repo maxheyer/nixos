@@ -78,6 +78,7 @@
       gcc
       gnumake
       xwayland-satellite
+      appimage-run
 
       font-awesome
 
@@ -99,6 +100,7 @@
       slack
       freelens-bin
       logseq
+      networkmanagerapplet
     ];
 
     fonts.fontconfig.enable = true;
@@ -184,5 +186,30 @@
       icon = "${./icons/kubernetes.png}";
       terminal = false;
       categories = [ "Utility" "Development" ];
+    };
+
+    xdg.desktopEntries.cider = {
+      name = "Cider";
+      genericName = "Music";
+      exec = "${pkgs.appimage-run}/bin/appimage-run ./Applications/cider.AppImage";
+      terminal = false;
+      categories = [ "Music" ];
+    };
+
+    systemd.user.services.nm-applet = {
+      Unit = {
+        Description = "Network Manager Applet";
+        After = [ "graphical-session.target" ];
+        PartOf = [ "graphical-session.target" ];
+      };
+
+      Service = {
+        ExecStart = "${pkgs.networkmanagerapplet}/bin/nm-applet --indicator";
+        Restart = "on-failure";
+      };
+
+      Install = {
+        WantedBy = [ "graphical-session.target" ];
+      };
     };
   }

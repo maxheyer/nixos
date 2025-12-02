@@ -24,7 +24,27 @@
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Enable networking
-  networking.networkmanager.enable = true;
+  networking.networkmanager = {
+    enable = true;
+    dns = "systemd-resolved";
+    plugins = [ pkgs.networkmanager-openvpn ];
+  };
+
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+    openFirewall = true;
+    publish = {
+      enable = true;
+      userServices = true;
+    };
+  };
+ 
+  networking.firewall = {
+    enable = true;
+    checkReversePath = "loose";
+
+  };
 
   # Set your time zone.
   time.timeZone = "Europe/Berlin";
@@ -104,23 +124,6 @@
   services.resolved = {
     enable = true;
     fallbackDns = [ "1.1.1.1" ];
-  };
-
-  services.avahi = {
-    enable = true;
-    nssmdns4 = true;
-    openFirewall = true;
-    publish = {
-      enable = true;
-      userServices = true;
-    };
-  };
- 
-  networking.networkmanager.dns = "systemd-resolved";
-  networking.firewall = {
-    enable = true;
-    checkReversePath = "loose";
-
   };
 
   services.xserver.enable = false;
