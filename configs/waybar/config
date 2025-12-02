@@ -16,7 +16,6 @@
     "custom/kubernetes",
     "custom/mpv",
     "pulseaudio",
-    "network",
     "backlight",
     "battery",
     "niri/language",
@@ -47,7 +46,7 @@
   },
   "cpu": {
     "interval": 1,
-    "format": "{icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}{icon8}{icon9}{icon10}{icon11}{icon12}{icon13}{icon14}{icon15}",
+    "format": "{icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}{icon8}{icon9}{icon10}{icon11}{icon12}{icon13}{icon14}{icon15}{icon16}{icon17}{icon18}{icon19}{icon20}{icon21}{icon22}{icon23}{icon24}{icon25}{icon26}{icon27}{icon28}{icon29}{icon30}{icon31}",
     "format-icons": [
       "<span color='#69ff94'>▁</span>", // green
       "<span color='#2aa9ff'>▂</span>", // blue
@@ -161,15 +160,5 @@
   "niri/language": {
     "format": "  {short}",
     "on-click": "niri msg action switch-layout next",
-  },
-  "network": {
-    "interface": "wlan0",
-    "format": "{ifname}",
-    "format-disconnected": "",
-    "format-wifi": " ",
-    "format-alt": "  {essid}",
-    "tooltip-format": "{signalStrength}%",
-    "tooltip-format-wifi": "{essid} {signalStrength}%",
-    "tooltip-format-disconnected": "No Connection",
   }
 }
