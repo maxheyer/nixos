@@ -41,17 +41,43 @@
       ".config/waybar".source = ./configs/waybar;
     };
 
+    gtk = {
+      enable = true;
+      iconTheme = {
+        name = "Papirus-Dark"; 
+        package = pkgs.papirus-icon-theme;
+      };
+
+      theme = {
+        name = "Adwaita-dark";
+        package = pkgs.gnome-themes-extra;
+      };
+
+      gtk3.extraConfig = {
+        gtk-application-prefer-dark-theme = 1;
+      };
+      gtk4.extraConfig = {
+        gtk-application-prefer-dark-theme = 1;
+      };
+    };
+
+    qt = {
+      enable = true;
+      platformTheme.name = "gtk";
+      style.name = "adwaita-dark";
+    };
+
     home.pointerCursor = {
       gtk.enable = true;
       x11.enable = true;
 
-      name = "catppuccin-macchiato-dark-cursors";
-      package = pkgs.catppuccin-cursors.macchiatoDark;
+      name = "material-cursors";
+      package = pkgs.material-cursors;
       size = 24;
     };
 
     home.sessionVariables = {
-      XCURSOR_THEME = "catppuccin-macchiato-dark-cursors";
+      XCURSOR_THEME = "material-cursors";
       XCURSOR_SIZE = "24";
     };
 
@@ -72,6 +98,7 @@
       ffmpeg
       v4l-utils
       libnotify
+      glib
 
       nodejs
       tree-sitter
@@ -80,6 +107,8 @@
       xwayland-satellite
       appimage-run
 
+      adwaita-icon-theme
+      hicolor-icon-theme
       font-awesome
 
       # cli
