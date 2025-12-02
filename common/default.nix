@@ -72,6 +72,7 @@
     git
     vivaldi
     corefonts
+    netbird-ui
   ];
 
   programs.niri.enable = true;
@@ -99,7 +100,31 @@
     };
   };
 
+  services.netbird.enable = true;
+  services.resolved = {
+    enable = true;
+    fallbackDns = [ "1.1.1.1" ];
+  };
+
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+    openFirewall = true;
+    publish = {
+      enable = true;
+      userServices = true;
+    };
+  };
+ 
+  networking.networkmanager.dns = "systemd-resolved";
+  networking.firewall = {
+    enable = true;
+    checkReversePath = "loose";
+
+  };
+
   services.xserver.enable = false;
+
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
