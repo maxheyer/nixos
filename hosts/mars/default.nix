@@ -51,6 +51,9 @@ hardware.graphics = {
   };
 
   programs.gamescope.enable = true;
-
   programs.gamemode.enable = true;
+
+  environment.systemPackages = with pkgs; [
+    discord-ptb
+  ];
 }
