@@ -166,7 +166,7 @@
       genericName = "Kubernetes Switcher";
       comment = "Switch kubectl context using fuzzel";
       exec = "${k8s-switch-script}";
-      icon = "kubernetes"; 
+      icon = "${./icons/kubernetes.png}";
       terminal = false;
       categories = [ "Utility" "Development" ];
     };
