@@ -105,6 +105,20 @@
 
     programs.home-manager.enable = true;
 
+    programs.thunderbird = {
+      enable = true;
+
+      profiles."default" = {
+        isDefault = true;
+        settings = {
+          "mail.spam.manualMark" = true;
+        };
+        accountsOrder = [
+          "gmail"
+        ];
+      };
+    };
+
     programs.neovim = {
       enable = true;
       defaultEditor = true;
