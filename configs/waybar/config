@@ -1,6 +1,11 @@
 {
   "layer": "top",
   "position": "top",
+  "exclusive": true,
+  "margin-top": 0,
+  "margin-bottom": 0,
+  "margin-left": 0,
+  "margin-right": 0,
   "height": 26,
   "modules-left": [
     "group/hardware",
@@ -52,8 +57,8 @@
     "tooltip": true
   },
   "tray": {
-    "icon-size": 16,
-    "spacing": 24
+    "icon-size": 13,
+    "spacing": 16
   },
   "clock": {
     "timezone": "Europe/Berlin",
