@@ -215,19 +215,6 @@
       };
     };
 
-    xdg.desktopEntries.gamescope = {
-      name = "Gamescope";
-      genericName = "Gaming Platform";
-      comment = "Application for managing and playing games on Steam";
-
-      exec = "gamescope -e -- steam %U";
-
-      icon = "steam";
-      terminal = false;
-      categories = [ "Network" "FileTransfer" "Game" ];
-      mimeType = [ "x-scheme-handler/steam" "x-scheme-handler/steamlink" ];
-    };
-
     xdg.desktopEntries.k8sCtx = {
       name = "k8s Context";
       genericName = "Kubernetes Switcher";
