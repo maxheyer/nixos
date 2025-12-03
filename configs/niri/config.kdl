@@ -207,8 +207,8 @@ binds {
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Layout
 
     layout {
-        gaps 25 // Gap between windows
-        center-focused-column "never" // Don’t auto-center focused column
+        gaps 25
+        center-focused-column "never"
 
         preset-column-widths {
             proportion 0.33333
@@ -227,7 +227,9 @@ binds {
           inactive-color "#6c7086"
         }
 
-        struts {}
+        struts {
+            top -15
+        }
     }
 
 // ────────────── Animation Settings ──────────────
