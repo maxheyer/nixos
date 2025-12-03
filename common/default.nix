@@ -99,6 +99,8 @@
 
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
+  security.pam.services.swaylock = {};
+
   services.pipewire = {
       enable = true;
       alsa.enable = true;
@@ -160,7 +162,7 @@
     enable = true;
     wlr.enable = true;
     extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-    config.common.default = "*";
+    config.common.default = "gtk";
   };
 
 }

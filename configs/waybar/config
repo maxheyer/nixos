@@ -1,7 +1,7 @@
 {
   "layer": "top",
   "position": "top",
-  "height": 46,
+  "height": 26,
   "modules-left": [
     "group/hardware",
     "custom/netusage",
@@ -11,7 +11,6 @@
     "clock"
   ],
   "modules-right": [
-    "custom/mpv",
     "pulseaudio",
     "backlight",
     "battery",
@@ -36,7 +35,7 @@
   "custom/netusage": {
     "format": "{}",
     "interval": 1,
-    "exec": "bash -lc 'iface=enp6s0; st=/run/user/$(id -u)/.netusage_$iface; rx=$(cat /sys/class/net/$iface/statistics/rx_bytes 2>/dev/null) || { echo \"no iface\"; exit 0; }; tx=$(cat /sys/class/net/$iface/statistics/tx_bytes 2>/dev/null) || { echo \"no iface\"; exit 0; }; now=$(date +%s); if [ -r \"$st\" ]; then read pt prx ptx < \"$st\"; dt=$((now-pt)); [ $dt -lt 1 ] && dt=1; dr=$((rx-prx)); du=$((tx-ptx)); [ $dr -lt 0 ] && dr=0; [ $du -lt 0 ] && du=0; down=$((dr/dt)); up=$((du/dt)); else down=0; up=0; fi; printf \"%s %s %s\\n\" \"$now\" \"$rx\" \"$tx\" > \"$st\"; printf \"▼%dKB ▲%dKB\\n\" $((down/1024)) $((up/1024))'"
+    "exec": "bash -lc 'iface=enp6s0; st=/run/user/$(id -u)/.netusage_$iface; rx=$(cat /sys/class/net/$iface/statistics/rx_bytes 2>/dev/null) || { echo \"no iface\"; exit 0; }; tx=$(cat /sys/class/net/$iface/statistics/tx_bytes 2>/dev/null) || { echo \"no iface\"; exit 0; }; now=$(date +%s); if [ -r \"$st\" ]; then read pt prx ptx < \"$st\"; dt=$((now-pt)); [ $dt -lt 1 ] && dt=1; dr=$((rx-prx)); du=$((tx-ptx)); [ $dr -lt 0 ] && dr=0; [ $du -lt 0 ] && du=0; down=$((dr/dt)); up=$((du/dt)); else down=0; up=0; fi; printf \"%s %s %s\\n\" \"$now\" \"$rx\" \"$tx\" > \"$st\"; printf \"▼ %dKB  ▲ %dKB\\n\" $((down/1024)) $((up/1024))'"
   },
   "memory": {
     "interval": 2,
@@ -46,12 +45,6 @@
     "interval": 2,
     "format": "{usage}% "
   },
-  "custom/mpv": {
-    "format": "{} ",
-    "interval": 2,
-    "max-length": 30,
-    "exec": "bash -lc 'S=/tmp/mpvsocket; if [ -S \"$S\" ]; then printf %s\\\\n \"{\\\"command\\\": [\\\"get_property\\\", \\\"media-title\\\"]}\" | socat - \"$S\" | jq -r .data | sed -e \"s/^null$//\"; else echo \"\"; fi'"
-  },
   "custom/kubernetes": {
     "exec": "kubectl config current-context",
     "format": "{} 󱃾",
@@ -60,7 +53,7 @@
   },
   "tray": {
     "icon-size": 16,
-    "spacing": 35
+    "spacing": 24
   },
   "clock": {
     "timezone": "Europe/Berlin",

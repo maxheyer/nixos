@@ -1,28 +1,38 @@
-@define-color fg #abb2bf;
-@define-color red #e06c75;
-@define-color green #98c379;
-@define-color yellow #e5c07b;
-@define-color blue #61afef;
-@define-color purple #c678dd;
-@define-color cyan #56b6c2;
+@define-color fg #f5f5f7;
+@define-color fg-dim #c0c0c5;
+@define-color accent #007aff;
+@define-color red #ff3b30;
+@define-color green #34c759;
+@define-color yellow #ffcc00;
 
 * {
     border: none;
-    font-family: "BlexMono Nerd Font", Roboto, Helvetica, Arial, sans-serif;
-    font-size: 16px; 
-    font-weight: bold;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    font-family: "SF Pro Text", "BlexMono Nerd Font", system-ui, -apple-system, sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    text-shadow: none;
 }
 
 window#waybar {
-    background-color: transparent;
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.18),
+        rgba(255, 255, 255, 0.12)
+    );
     color: @fg;
+    border-radius: 0;
+    border: none;
+    border: 0.5px solid rgba(255, 255, 255, 0.2);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.25),
+        0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
 tooltip {
-    background: #282c34;
-    border: 1px solid @blue;
+    background: linear-gradient(to bottom, rgba(40, 40, 40, 0.92), rgba(30, 30, 30, 0.95));
+    border: 0.5px solid rgba(255, 255, 255, 0.12);
     border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
 }
 
 tooltip label {
@@ -30,44 +40,89 @@ tooltip label {
     text-shadow: none;
 }
 
+/* All modules - clean, no backgrounds */
 #cpu, #memory, #temperature,
 #custom-netusage, #custom-kubernetes,
-#clock,
-#custom-mpv, #pulseaudio, #backlight, #battery, #niri-language, #tray, #custom-lock {
-    background-color: transparent;
-    margin: 0 35px;
-    box-shadow: none;
-}
-
-#group-hardware #cpu, 
-#group-hardware #memory, 
-#group-hardware #temperature {
-    color: @fg;
-}
-
+#custom-mpv, #pulseaudio, #backlight, #battery, #niri-language, #tray, #custom-lock,
 #clock {
-    color: @fg;
-    font-size: 18px;
-}
-
-#custom-netusage, #custom-kubernetes {
-    color: @fg;
-}
-
-#pulseaudio {
+    background-color: transparent;
+    border: none;
+    border-radius: 6px;
+    padding: 0 10px;
+    margin: 0 6px;
     color: @fg;
 }
 
+/* Left side */
+#group-hardware {
+    background-color: transparent;
+    padding: 0;
+    margin: 0 0 0 16px;
+}
+
+#group-hardware #cpu,
+#group-hardware #memory,
+#group-hardware #temperature {
+    margin: 0 8px;
+}
+
+#custom-netusage {
+    margin: 0 8px;
+    color: @fg;
+}
+
+#custom-kubernetes {
+    margin: 0 8px;
+}
+
+/* Center */
+#clock {
+    font-size: 13px;
+    font-weight: 500;
+    padding: 0 16px;
+    margin: 0 12px;
+}
+
+/* Right side */
+#custom-mpv,
+#pulseaudio,
+#backlight,
+#battery,
+#niri-language {
+    margin: 0 10px;
+}
+
+#tray {
+    margin: 0 10px;
+}
+
+#tray > .passive,
+#tray > .active,
+#tray > .needs-attention {
+    -gtk-icon-effect: none;
+    -gtk-icon-palette: success @fg, warning @yellow, error @red;
+}
+
+#tray menu {
+    background-color: rgba(30, 30, 30, 0.95);
+    color: @fg;
+}
+
+#custom-lock {
+    margin: 0 10px;
+}
+
+/* Module states */
 #pulseaudio.muted {
-    color: #5c6370;
+    color: @fg-dim;
 }
 
 #battery {
-    color: @green;
+    color: @fg;
 }
 
 #battery.charging {
-    color: @cyan;
+    color: @green;
 }
 
 #battery.warning:not(.charging) {
@@ -83,14 +138,21 @@ tooltip label {
     animation-direction: alternate;
 }
 
-#custom-mpv { color: @fg; }
-#backlight { color: @fg; }
-#custom-lock { color: @red; }
-#niri-language { color: @blue; }
-
-#clock:hover, #battery:hover, #pulseaudio:hover, #niri-language:hover, #custom-lock:hover {
-    color: #ffffff;
-    text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.4);
+/* Hover effects - Text glow */
+#clock:hover,
+#battery:hover,
+#pulseaudio:hover,
+#niri-language:hover,
+#custom-lock:hover,
+#custom-netusage:hover,
+#custom-kubernetes:hover,
+#custom-mpv:hover,
+#backlight:hover,
+#cpu:hover,
+#memory:hover,
+#temperature:hover {
+    text-shadow: 0 0 12px rgba(255, 255, 255, 0.8);
+    transition: text-shadow 0.2s ease;
 }
 
 @keyframes blink {

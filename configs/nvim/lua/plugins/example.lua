@@ -77,38 +77,12 @@ return {
 },
   {
       "mason-org/mason.nvim",
-      opts = {
-        ensure_installed = {
-          "stylua",
-          "shfmt",
-        },
-        auto_install = false,
-        registries = {
-          "github:mason-org/mason-registry",
-        },
-        max_concurrent_installers = 4,
-        ui = {
-          check_outdated_packages_on_open = true,
-          border = "none",
-          icons = {
-            package_installed = "✓",
-            package_pending = "➜",
-            package_uninstalled = "✗"
-          },
-          keymaps = {
-            toggle_package_expand = "<CR>",
-            install_package = "i",
-            update_package = "u",
-            check_package_version = "c",
-            update_all_packages = "U",
-            check_outdated_packages = "C",
-            uninstall_package = "X",
-            cancel_installation = "<C-c>",
-            apply_language_filter = "<C-f>",
-          },
-        },
-      },
-    },
+      enabled = false,
+  },
+  {
+      "mason-org/mason-lspconfig.nvim",
+      enabled = false,
+  },
   {
     "mfussenegger/nvim-lint",
     optional = true,
@@ -148,7 +122,7 @@ return {
         indent_blankline = { enabled = true },
         leap = true,
         lsp_trouble = true,
-        mason = true,
+        mason = false,
         markdown = true,
         mini = true,
         native_lsp = {
@@ -180,10 +154,11 @@ return {
       transparent = true,
     },
   },
+  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "ashen",
+      colorscheme = "catppuccin-latte",
     },
   },
   {

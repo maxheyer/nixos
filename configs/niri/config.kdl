@@ -207,7 +207,7 @@ binds {
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Layout
 
     layout {
-        gaps 50 // Gap between windows
+        gaps 25 // Gap between windows
         center-focused-column "never" // Don’t auto-center focused column
 
         preset-column-widths {
@@ -218,7 +218,7 @@ binds {
 
         focus-ring {
           width 1
-          active-color "#FC531DFF"
+          active-color "#cba6f7"
         }
 
         border {
@@ -274,12 +274,6 @@ binds {
         match app-id=r#"firefox$"# title="^Picture-in-Picture$"
         match app-id=r#"mpv$"#
         open-floating true
-    }
-
-    window-rule {
-      match app-id=r#"ghostty$"#
-
-      opacity 1.0
     }
 
     window-rule {

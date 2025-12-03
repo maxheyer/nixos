@@ -20,17 +20,13 @@
       [
         ./home/fish.nix
         ./home/sway.nix
+        ./home/lsp.nix
       ];
 
     home.username = "max";
     home.homeDirectory = "/home/max";
 
     home.stateVersion = "24.11"; 
-
-    home.sessionVariables = {
-      EDITOR = "nvim";
-      KUBE_EDITOR = "nvim";
-    };
 
     home.file = {
       ".config/niri/config.kdl".source = ./configs/niri/config.kdl;
@@ -44,42 +40,52 @@
     gtk = {
       enable = true;
       iconTheme = {
-        name = "Papirus-Dark"; 
+        name = "Papirus";
         package = pkgs.papirus-icon-theme;
       };
 
+      cursorTheme = {
+        name = "catppuccin-latte-light-cursors";
+        package = pkgs.catppuccin-cursors.latteLight;
+      };
+
       theme = {
-        name = "Adwaita-dark";
+        name = "Adwaita-light";
         package = pkgs.gnome-themes-extra;
       };
 
       gtk3.extraConfig = {
-        gtk-application-prefer-dark-theme = 1;
+        gtk-application-prefer-dark-theme = 0;
       };
       gtk4.extraConfig = {
-        gtk-application-prefer-dark-theme = 1;
+        gtk-application-prefer-dark-theme = 0;
       };
     };
 
     qt = {
       enable = true;
       platformTheme.name = "gtk";
-      style.name = "adwaita-dark";
+      style.name = "adwaita";
     };
 
     home.pointerCursor = {
       gtk.enable = true;
       x11.enable = true;
-
-      name = "material-cursors";
-      package = pkgs.material-cursors;
+      name = "catppuccin-latte-light-cursors";
+      package = pkgs.catppuccin-cursors.latteLight;
       size = 24;
     };
 
     home.sessionVariables = {
-      XCURSOR_THEME = "material-cursors";
+      XCURSOR_THEME = "catppuccin-latte-light-cursors";
       XCURSOR_SIZE = "24";
+      EDITOR = "nvim";
+      KUBE_EDITOR = "nvim";
+      ELECTRON_OZONE_PLATFORM_HINT = "auto";
+      GTK_THEME = "Adwaita:light";
     };
+
+    programs.swaylock.enable = true;
 
     programs.waybar = {
       enable = true;
@@ -99,6 +105,8 @@
       v4l-utils
       libnotify
       glib
+      libappindicator
+      zenity
 
       nodejs
       tree-sitter
@@ -110,6 +118,8 @@
       adwaita-icon-theme
       hicolor-icon-theme
       font-awesome
+      nerd-fonts.blex-mono
+      dconf
 
       # cli
       btop
@@ -122,6 +132,8 @@
       kubectl
       bluetui
       fastfetch
+      claude-code
+      gemini-cli
 
       # apps
       ghostty
@@ -130,9 +142,18 @@
       freelens-bin
       logseq
       networkmanagerapplet
+      lutris
+      onlyoffice-desktopeditors
     ];
 
     fonts.fontconfig.enable = true;
+
+    dconf.settings = {
+      "org/gnome/desktop/interface" = {
+        color-scheme = "prefer-light";
+        gtk-theme = "Adwaita-light";
+      };
+    };
 
     programs.home-manager.enable = true;
 
