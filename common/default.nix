@@ -93,7 +93,6 @@
     vivaldi
     corefonts
     netbird-ui
-    toybox
   ];
 
   programs.niri.enable = true;

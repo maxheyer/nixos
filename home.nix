@@ -29,12 +29,15 @@
     home.stateVersion = "24.11"; 
 
     home.file = {
-      ".config/niri/config.kdl".source = ./configs/niri/config.kdl;
       ".gitconfig".source = ./configs/.gitconfig;
-      ".config/fuzzel".source = ./configs/fuzzel;
-      ".config/ghostty".source = ./configs/ghostty;
-      ".config/nvim".source = ./configs/nvim;
-      ".config/waybar".source = ./configs/waybar;
+    };
+
+    xdg.configFile = {
+      "niri/config.kdl".source = ./configs/niri/config.kdl;
+      "fuzzel".source = ./configs/fuzzel;
+      "ghostty".source = ./configs/ghostty;
+      "nvim".source = ./configs/nvim;
+      "waybar".source = ./configs/waybar;
     };
 
     gtk = {
@@ -83,6 +86,7 @@
       KUBE_EDITOR = "nvim";
       ELECTRON_OZONE_PLATFORM_HINT = "auto";
       GTK_THEME = "Adwaita:light";
+      NIXOS_OZONE_WL = "1";
     };
 
     programs.swaylock.enable = true;
@@ -102,7 +106,6 @@
       lm_sensors
       mpv
       ffmpeg
-      v4l-utils
       libnotify
       glib
       libappindicator
@@ -116,6 +119,7 @@
       appimage-run
 
       adwaita-icon-theme
+      papirus-icon-theme
       hicolor-icon-theme
       font-awesome
       nerd-fonts.blex-mono
@@ -134,6 +138,7 @@
       fastfetch
       claude-code
       gemini-cli
+      yubikey-manager
 
       # apps
       ghostty
@@ -156,6 +161,8 @@
     };
 
     programs.home-manager.enable = true;
+
+    programs.obs-studio.enable = true;
 
     programs.thunderbird = {
       enable = true;
