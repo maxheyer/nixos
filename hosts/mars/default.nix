@@ -53,6 +53,18 @@ hardware.graphics = {
   programs.gamescope.enable = true;
   programs.gamemode.enable = true;
 
+  services.ollama = {
+    enable = true;
+    acceleration = "cuda";
+  };
+
+  services.open-webui = {
+    enable = true;
+    environment = {
+      OLLAMA_API_BASE_URL = "http://127.0.0.1:11434";
+    };
+  };
+
   environment.systemPackages = with pkgs; [
     discord-ptb
   ];
