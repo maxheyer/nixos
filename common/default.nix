@@ -5,17 +5,19 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [
-    ];
-
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Use latest kernel.
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_cachyos;
+
+  boot.kernel.sysctl = {
+    "kernel.sched_base_slice_ns" = 3000000;
+    "kernel.sched_migration_cost_ns" = 500000;
+    "kernel.sched_nr_migrate" = 32;
+  };
 
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 

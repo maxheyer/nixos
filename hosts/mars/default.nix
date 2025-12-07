@@ -13,6 +13,11 @@
   nixpkgs.config.allowUnfree = true;
   services.xserver.videoDrivers = [ "nvidia" ];
 
+  services.scx = {
+    enable = true;
+    scheduler = "scx_rusty"; 
+  };
+
   powerManagement.cpuFreqGovernor = "performance";
   hardware.bluetooth = {
     enable = true;
