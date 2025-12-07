@@ -147,8 +147,8 @@
       freelens-bin
       logseq
       networkmanagerapplet
-      lutris
       onlyoffice-desktopeditors
+      faugus-launcher
     ];
 
     fonts.fontconfig.enable = true;
