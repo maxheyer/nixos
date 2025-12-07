@@ -1,171 +1,178 @@
-@define-color fg #f5f5f7;
-@define-color fg-dim #c0c0c5;
-@define-color accent #007aff;
-@define-color red #ff3b30;
-@define-color green #34c759;
-@define-color yellow #ffcc00;
+@define-color bg-dark #1a1a1a;
+@define-color bg-light #e6e6e6;
+@define-color fg-white #ffffff;
+@define-color fg-black #000000;
+@define-color gray-dark #2a2a2a;
+@define-color gray-mid #666666;
+@define-color gray-light #cccccc;
 
 * {
     margin: 0;
     padding: 0;
     border: none;
-    min-height: 4px;
-    font-family: "BlexMono Nerd Font", system-ui, -apple-system, sans-serif;
+    min-height: 0;
+    font-family: "BlexMono Nerd Font", system-ui, sans-serif;
     font-size: 13px;
-    font-weight: 600;
+    font-weight: 500;
     text-shadow: none;
 }
 
 window#waybar {
-    margin: 0;
-    color: @fg;
-    border-radius: 0;
-    border: none;
-    background: transparent;
+    background: rgba(0, 0, 0, 0);
+    color: @fg-black;
 }
 
 tooltip {
-    background: linear-gradient(to bottom, rgba(40, 40, 40, 0.92), rgba(30, 30, 30, 0.95));
+    background: @bg-light;
+    color: @fg-black;
+    border-radius: 16px;
+    border: 1px solid @gray-light;
+    padding: 8px 12px;
 }
 
 tooltip label {
-    color: @fg;
-    text-shadow: none;
+    color: @fg-black;
 }
 
-/* All modules - clean, no backgrounds */
 #cpu, #memory, #temperature,
-#custom-netusage, #custom-kubernetes,
-#custom-mpv, #pulseaudio, #backlight, #battery, #niri-language, #tray, #custom-lock,
-#clock {
-    background-color: transparent;
-    border: none;
-    border-radius: 6px;
-    padding: 0 10px;
+#custom-netusage,
+#custom-kubernetes,
+#clock,
+#backlight, #battery, #pulseaudio, #language,
+#tray, #custom-lock {
+    border-radius: 30px;
+
+    background-color: @bg-light;
+    color: @fg-black;
+
     margin: 0 6px;
-    color: @fg;
+    padding: 6px 18px;
+
+    border: 1px solid @gray-mid;
+
+    transition: all 0.2s ease-in-out;
 }
 
-/* Left side */
-#group-hardware {
-    background-color: transparent;
-    padding: 0;
-    margin: 0 0 0 16px;
+#cpu {
+    margin-left: 0;
 }
 
-#group-hardware #cpu,
-#group-hardware #memory,
-#group-hardware #temperature {
-    margin: 0 8px;
+#cpu, #memory, #temperature {
+    padding: 6px 16px;
+    font-weight: 500;
 }
 
 #custom-netusage {
-    margin: 0 8px;
-    color: @fg;
+    padding: 6px 18px;
+    font-size: 12px;
 }
 
-#custom-kubernetes {
-    margin: 0 8px;
-}
-
-/* Center */
 #clock {
+    padding: 6px 24px;
     font-size: 13px;
-    font-weight: 500;
-    padding: 0 16px;
-    margin: 0 12px;
+    font-weight: 600;
 }
 
-/* Right side */
-#custom-mpv,
-#pulseaudio,
-#backlight,
-#battery,
-#niri-language {
-    margin: 0 10px;
-}
-
-#tray {
-    margin: 0 10px;
-    padding: 0;
-    padding-top: 3px;
-    min-height: 0;
-}
-
-#tray > .tray {
-    padding: 0;
-    margin: 0 2px;
-    min-height: 0;
-}
-
-#tray > .passive,
-#tray > .active,
-#tray > .needs-attention {
-    -gtk-icon-effect: none;
-    -gtk-icon-palette: success @fg, warning @yellow, error @red;
-    padding: 0;
-    margin: 0 2px;
-    min-height: 0;
-}
-
-#tray > .needs-attention {
-    background-color: transparent;
-}
-
-#tray menu {
-    background-color: @fg;
-    color: @accent;
-}
-
-#custom-lock {
-    margin: 0 10px;
-}
-
-/* Module states */
-#pulseaudio.muted {
-    color: @fg-dim;
+#backlight, #battery, #pulseaudio, #language, #custom-lock {
+    padding: 6px 16px;
 }
 
 #battery {
-    color: @fg;
+    padding: 6px 18px;
+}
+
+#tray {
+    padding: 4px 12px;
+    min-width: 20px;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: none;
+}
+
+#tray > .active {
+    -gtk-icon-effect: none;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: @gray-dark;
+}
+
+#tray menu {
+    background: @bg-light;
+    color: @fg-black;
+    border: 1px solid @gray-mid;
+    border-radius: 12px;
+    padding: 4px;
+}
+
+#tray menuitem {
+    background: transparent;
+    color: @fg-black;
+    border-radius: 8px;
+    padding: 6px 12px;
+    margin: 2px;
+}
+
+#tray menuitem:hover {
+    background: @fg-white;
+    color: @fg-black;
+}
+
+#tray menuitem:selected {
+    background: @gray-light;
+    color: @fg-black;
+}
+
+#cpu:hover, #memory:hover, #temperature:hover,
+#custom-netusage:hover,
+#custom-kubernetes:hover,
+#clock:hover,
+#backlight:hover, #battery:hover, #pulseaudio:hover, #language:hover,
+#tray:hover, #custom-lock:hover {
+    background-color: @fg-white;
+    border-color: @fg-black;
+}
+
+#temperature.critical {
+    color: @fg-black;
+    background-color: @gray-mid;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+#battery {
+    color: @fg-black;
 }
 
 #battery.charging {
-    color: @green;
+    color: @fg-black;
 }
 
 #battery.warning:not(.charging) {
-    color: @yellow;
+    background-color: @gray-mid;
+    color: @fg-black;
+    animation: pulse 2s ease-in-out infinite;
 }
 
 #battery.critical:not(.charging) {
-    color: @red;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+    background-color: @gray-dark;
+    color: @fg-white;
+    animation: pulse 1s ease-in-out infinite;
 }
 
-/* Hover effects - Text glow */
-#clock:hover,
-#battery:hover,
-#pulseaudio:hover,
-#niri-language:hover,
-#custom-lock:hover,
-#custom-netusage:hover,
-#custom-kubernetes:hover,
-#custom-mpv:hover,
-#backlight:hover,
-#cpu:hover,
-#memory:hover,
-#temperature:hover {
-    text-shadow: 0 0 12px rgba(255, 255, 255, 0.8);
-    transition: text-shadow 0.2s ease;
+#pulseaudio.muted {
+    color: @gray-mid;
 }
 
-@keyframes blink {
+@keyframes pulse {
+    from {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
     to {
-        color: rgba(255, 255, 255, 0.5);
+        opacity: 1;
     }
 }

@@ -156,9 +156,23 @@ return {
   },
   { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
   {
+    "idr4n/github-monochrome.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {
+      style = "light",
+      transparent = false,
+      on_colors = function(colors, style)
+        if style == "light" then
+          colors.bg = "#e6e6e6"
+        end
+      end,
+    },
+  },
+  {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "catppuccin-latte",
+      colorscheme = "github-monochrome",
     },
   },
   {

@@ -43,25 +43,27 @@
     gtk = {
       enable = true;
       iconTheme = {
-        name = "Papirus";
-        package = pkgs.papirus-icon-theme;
+        name = "Adwaita";
+        package = pkgs.adwaita-icon-theme;
       };
 
       cursorTheme = {
-        name = "catppuccin-latte-light-cursors";
-        package = pkgs.catppuccin-cursors.latteLight;
+        name = "Adwaita";
+        package = pkgs.adwaita-icon-theme;
       };
 
       theme = {
-        name = "Adwaita-light";
+        name = "Adwaita";
         package = pkgs.gnome-themes-extra;
       };
 
       gtk3.extraConfig = {
         gtk-application-prefer-dark-theme = 0;
+        gtk-icon-theme-name = "Adwaita";
       };
       gtk4.extraConfig = {
         gtk-application-prefer-dark-theme = 0;
+        gtk-icon-theme-name = "Adwaita";
       };
     };
 
@@ -74,22 +76,24 @@
     home.pointerCursor = {
       gtk.enable = true;
       x11.enable = true;
-      name = "catppuccin-latte-light-cursors";
-      package = pkgs.catppuccin-cursors.latteLight;
+      name = "Adwaita";
+      package = pkgs.adwaita-icon-theme;
       size = 24;
     };
 
     home.sessionVariables = {
-      XCURSOR_THEME = "catppuccin-latte-light-cursors";
+      XCURSOR_THEME = "Adwaita";
       XCURSOR_SIZE = "24";
       EDITOR = "nvim";
       KUBE_EDITOR = "nvim";
       ELECTRON_OZONE_PLATFORM_HINT = "auto";
-      GTK_THEME = "Adwaita:light";
+      GTK_THEME = "Adwaita";
       NIXOS_OZONE_WL = "1";
     };
 
     programs.swaylock.enable = true;
+
+    programs.yazi.enable = true;
 
     programs.waybar = {
       enable = true;
@@ -97,6 +101,8 @@
         enable = true;
         target ="graphical-session.target";
       };
+      settings = {};
+      style = "";
     };
 
     home.packages = with pkgs; [
@@ -156,7 +162,7 @@
     dconf.settings = {
       "org/gnome/desktop/interface" = {
         color-scheme = "prefer-light";
-        gtk-theme = "Adwaita-light";
+        gtk-theme = "Adwaita";
       };
     };
 
@@ -192,7 +198,7 @@
       };
 
       Service = {
-        ExecStart = "${pkgs.xwayland-satellite}/bin/xwayland-satellite";
+        ExecStart = "${pkgs.xwayland-satellite}/bin/xwayland-satellite :1";
         Restart = "always";
       };
 

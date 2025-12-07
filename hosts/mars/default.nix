@@ -51,9 +51,7 @@ hardware.graphics = {
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
 
-  programs.steam = {
-    enable = true;
-  };
+  programs.steam.enable = true;
 
   programs.gamescope.enable = true;
   programs.gamemode.enable = true;

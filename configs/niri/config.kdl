@@ -71,7 +71,7 @@ binds {
     // MOD+ALT+L                           hotkey-overlay-title="Lock Screen: swaylock" { spawn-sh "swaylock"; }
 
     // Please choose your own file manager
-    MOD+E                             hotkey-overlay-title="File Manager: Nautilus" { spawn-sh "nautilus"; }
+    MOD+E                             hotkey-overlay-title="File Manager: yazi" { spawn-sh "ghostty -e yazi"; }
 
     // ─── Audio Controls ───
     // Example volume keys mappings for PipeWire & WirePlumber.
@@ -203,7 +203,7 @@ binds {
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Layout
 
     layout {
-        gaps 25
+        gaps 15
         center-focused-column "never"
 
         preset-column-widths {
@@ -213,18 +213,24 @@ binds {
         }
 
         focus-ring {
-          width 1
-          active-color "#cba6f7"
+          width 0
+          active-color "#000000"
+          inactive-color "#cccccc"
         }
 
         border {
-          width 0
-          active-color "#cba6f7"
-          inactive-color "#6c7086"
+          width 2
+          active-color "#000000"
+          inactive-color "#cccccc"
         }
 
-        struts {
-            top -15
+        shadow {
+          on
+          softness 30
+          spread 5
+          offset x=0 y=5
+          draw-behind-window true
+          color "#00000070"
         }
     }
 
@@ -275,8 +281,10 @@ binds {
     }
 
     window-rule {
-        geometry-corner-radius 0 // Set every window radius to 20
+        geometry-corner-radius 12
         clip-to-geometry true
+
+        draw-border-with-background false
     }
 
 // ────────────── Environment Variables ──────────────

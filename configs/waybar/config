@@ -2,13 +2,15 @@
   "layer": "top",
   "position": "top",
   "exclusive": true,
-  "margin-top": 0,
+  "margin-top": 10,
   "margin-bottom": 0,
-  "margin-left": 0,
-  "margin-right": 0,
-  "height": 26,
+  "margin-left": 20,
+  "margin-right": 20,
+  "height": 38,
   "modules-left": [
-    "group/hardware",
+    "cpu",
+    "memory",
+    "temperature",
     "custom/netusage",
     "custom/kubernetes"
   ],
@@ -16,24 +18,16 @@
     "clock"
   ],
   "modules-right": [
-    "pulseaudio",
     "backlight",
     "battery",
+    "pulseaudio",
     "niri/language",
     "tray",
     "custom/lock"
   ],
-  "group/hardware": {
-    "orientation": "horizontal",
-    "modules": [
-      "cpu",
-      "memory",
-      "temperature"
-    ]
-  },
   "temperature": {
     "thermal-zone": 1,
-    "format": "{temperatureC}°C",
+    "format": " {temperatureC}°C",
     "critical-threshold": 80,
     "format-critical": "{temperatureC}°C "
   },
@@ -57,8 +51,9 @@
     "tooltip": true
   },
   "tray": {
-    "icon-size": 13,
-    "spacing": 16
+    "icon-size": 16,
+    "spacing": 10,
+    "show-passive-items": true
   },
   "clock": {
     "timezone": "Europe/Berlin",
@@ -105,7 +100,7 @@
   },
   "pulseaudio": {
     "format": "{volume}% {icon}",
-    "format-muted": "Mute  ",
+    "format-muted": " ",
     "format-icons": {
       "default": [
         "",
@@ -116,13 +111,13 @@
     "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
     "on-click-right": "pavucontrol"
   },
-  "custom/lock": {
-    "tooltip": false,
-    "on-click": "swaylock &",
-    "format": ""
-  },
   "niri/language": {
     "format": "{short}",
     "on-click": "niri msg action switch-layout next"
+  },
+  "custom/lock": {
+    "tooltip": false,
+    "on-click": "swaylock &",
+    "format": "󰌾"
   }
 }
