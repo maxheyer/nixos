@@ -145,6 +145,10 @@
       claude-code
       gemini-cli
       yubikey-manager
+      kubernetes-helm
+      jq
+      colmena
+      inetutils
 
       # apps
       ghostty
