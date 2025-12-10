@@ -95,13 +95,27 @@
     vivaldi
     corefonts
     netbird-ui
+    pam_u2f
   ];
 
   programs.niri.enable = true;
 
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
-  security.pam.services.swaylock = {};
+  security.pam.services = {
+    swaylock = {};
+    sudo.u2fAuth = true;
+  };
+
+  security.pam.u2f = {
+    enable = true;
+    settings = {
+      cue = true;
+      authfile = "/home/max/.config/Yubico/u2f_keys";
+    };
+  };
+
+  services.pcscd.enable = true;
 
   services.pipewire = {
       enable = true;
