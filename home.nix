@@ -20,6 +20,7 @@
       [
         ./home/fish.nix
         ./home/sway.nix
+        ./home/swayidle.nix
         ./home/lsp.nix
       ];
 
@@ -53,16 +54,16 @@
       };
 
       theme = {
-        name = "Adwaita";
+        name = "Adwaita-dark";
         package = pkgs.gnome-themes-extra;
       };
 
       gtk3.extraConfig = {
-        gtk-application-prefer-dark-theme = 0;
+        gtk-application-prefer-dark-theme = 1;
         gtk-icon-theme-name = "Adwaita";
       };
       gtk4.extraConfig = {
-        gtk-application-prefer-dark-theme = 0;
+        gtk-application-prefer-dark-theme = 1;
         gtk-icon-theme-name = "Adwaita";
       };
     };
@@ -87,7 +88,7 @@
       EDITOR = "nvim";
       KUBE_EDITOR = "nvim";
       ELECTRON_OZONE_PLATFORM_HINT = "auto";
-      GTK_THEME = "Adwaita";
+      GTK_THEME = "Adwaita-dark";
       NIXOS_OZONE_WL = "1";
     };
 
@@ -165,8 +166,8 @@
 
     dconf.settings = {
       "org/gnome/desktop/interface" = {
-        color-scheme = "prefer-light";
-        gtk-theme = "Adwaita";
+        color-scheme = "prefer-dark";
+        gtk-theme = "Adwaita-dark";
       };
     };
 

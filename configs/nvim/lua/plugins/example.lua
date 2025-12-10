@@ -160,11 +160,11 @@ return {
     lazy = false,
     priority = 1000,
     opts = {
-      style = "light",
+      style = "dark",
       transparent = false,
       on_colors = function(colors, style)
-        if style == "light" then
-          colors.bg = "#e6e6e6"
+        if style == "dark" then
+          colors.bg = "#000000"
         end
       end,
     },

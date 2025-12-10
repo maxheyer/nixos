@@ -27,7 +27,7 @@ input {
       accel-profile "flat"
     }
 
-    focus-follows-mouse // Automatically focus windows under the mouse pointer
+    focus-follows-mouse max-scroll-amount="0%"
     workspace-auto-back-and-forth // Enable workspace back & forth switching
 }
 
@@ -214,14 +214,14 @@ binds {
 
         focus-ring {
           width 0
-          active-color "#000000"
-          inactive-color "#cccccc"
+          active-color "#cccccc"
+          inactive-color "#666666"
         }
 
         border {
           width 2
-          active-color "#000000"
-          inactive-color "#cccccc"
+          active-color "#cccccc"
+          inactive-color "#666666"
         }
 
         shadow {

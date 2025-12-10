@@ -1,8 +1,8 @@
-@define-color bg-dark #1a1a1a;
+@define-color bg-dark #000000;
 @define-color bg-light #e6e6e6;
 @define-color fg-white #ffffff;
 @define-color fg-black #000000;
-@define-color gray-dark #2a2a2a;
+@define-color gray-dark #1a1a1a;
 @define-color gray-mid #666666;
 @define-color gray-light #cccccc;
 
@@ -19,19 +19,19 @@
 
 window#waybar {
     background: rgba(0, 0, 0, 0);
-    color: @fg-black;
+    color: @fg-white;
 }
 
 tooltip {
-    background: @bg-light;
-    color: @fg-black;
+    background: @bg-dark;
+    color: @fg-white;
     border-radius: 16px;
-    border: 1px solid @gray-light;
+    border: 1px solid @gray-mid;
     padding: 8px 12px;
 }
 
 tooltip label {
-    color: @fg-black;
+    color: @fg-white;
 }
 
 #cpu, #memory, #temperature,
@@ -42,8 +42,8 @@ tooltip label {
 #tray, #custom-lock {
     border-radius: 30px;
 
-    background-color: @bg-light;
-    color: @fg-black;
+    background-color: @bg-dark;
+    color: @fg-white;
 
     margin: 0 6px;
     padding: 6px 18px;
@@ -96,12 +96,12 @@ tooltip label {
 
 #tray > .needs-attention {
     -gtk-icon-effect: highlight;
-    background-color: @gray-dark;
+    background-color: @gray-light;
 }
 
 #tray menu {
-    background: @bg-light;
-    color: @fg-black;
+    background: @bg-dark;
+    color: @fg-white;
     border: 1px solid @gray-mid;
     border-radius: 12px;
     padding: 4px;
@@ -109,20 +109,20 @@ tooltip label {
 
 #tray menuitem {
     background: transparent;
-    color: @fg-black;
+    color: @fg-white;
     border-radius: 8px;
     padding: 6px 12px;
     margin: 2px;
 }
 
 #tray menuitem:hover {
-    background: @fg-white;
-    color: @fg-black;
+    background: @gray-dark;
+    color: @fg-white;
 }
 
 #tray menuitem:selected {
-    background: @gray-light;
-    color: @fg-black;
+    background: @gray-mid;
+    color: @fg-white;
 }
 
 #cpu:hover, #memory:hover, #temperature:hover,
@@ -131,33 +131,33 @@ tooltip label {
 #clock:hover,
 #backlight:hover, #battery:hover, #pulseaudio:hover, #language:hover,
 #tray:hover, #custom-lock:hover {
-    background-color: @fg-white;
-    border-color: @fg-black;
+    background-color: @gray-dark;
+    border-color: @fg-white;
 }
 
 #temperature.critical {
-    color: @fg-black;
+    color: @fg-white;
     background-color: @gray-mid;
     animation: pulse 2s ease-in-out infinite;
 }
 
 #battery {
-    color: @fg-black;
+    color: @fg-white;
 }
 
 #battery.charging {
-    color: @fg-black;
+    color: @fg-white;
 }
 
 #battery.warning:not(.charging) {
     background-color: @gray-mid;
-    color: @fg-black;
+    color: @fg-white;
     animation: pulse 2s ease-in-out infinite;
 }
 
 #battery.critical:not(.charging) {
-    background-color: @gray-dark;
-    color: @fg-white;
+    background-color: @gray-light;
+    color: @fg-black;
     animation: pulse 1s ease-in-out infinite;
 }
 

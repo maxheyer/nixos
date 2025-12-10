@@ -15,29 +15,32 @@ cursor-style = block
 shell-integration-features = no-cursor
 cursor-style-blink = false
 
-background = #e6e6e6
-foreground = #000000
-cursor-color = #000000
-cursor-text = #e6e6e6
-selection-background = #cccccc
-selection-foreground = #000000
+background = 000000
+foreground = abb2bf
 
-palette = 0=#e6e6e6
-palette = 1=#1a1a1a
-palette = 2=#666666
-palette = 3=#4a4a4a
-palette = 4=#333333
-palette = 5=#999999
-palette = 6=#2a2a2a
-palette = 7=#555555
-palette = 8=#777777
-palette = 9=#000000
-palette = 10=#888888
-palette = 11=#3a3a3a
-palette = 12=#222222
-palette = 13=#aaaaaa
-palette = 14=#1a1a1a
-palette = 15=#000000
+palette = 0=#000000
+palette = 1=#e06c75
+palette = 2=#98c379
+palette = 3=#e5c07b
+palette = 4=#61afef
+palette = 5=#c678dd
+palette = 6=#56b6c2
+palette = 7=#abb2bf
+
+palette = 8=#5c6370
+palette = 9=#e06c75
+palette = 10=#98c379
+palette = 11=#e5c07b
+palette = 12=#61afef
+palette = 13=#c678dd
+palette = 14=#56b6c2
+palette = 15=#ffffff
+
+cursor-color = ffffff
+cursor-text = 000000
+
+selection-background = 333333
+selection-foreground = ffffff
 
 keybind = cmd+s>l=goto_split:right
 keybind = cmd+s>h=goto_split:left

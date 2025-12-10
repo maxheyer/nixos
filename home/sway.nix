@@ -53,7 +53,7 @@
     }
 
     trough highlight {
-      background: #000000;
+      background: #ffffff;
     }
 
     scale {
@@ -70,26 +70,26 @@
     trough slider {
       margin: -10px;
       border-radius: 12px;
-      box-shadow: 0 0 2px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 0 2px rgba(255, 255, 255, 0.15);
       transition: all 0.2s ease;
-      background-color: #000000;
+      background-color: #ffffff;
     }
 
     trough slider:hover {
-      box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 0 4px rgba(255, 255, 255, 0.3);
     }
 
     trough {
-      background-color: #cccccc;
+      background-color: #333333;
     }
 
     /* notifications */
     .notification-background {
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
       border-radius: 12px;
       margin: 18px;
-      background: #e6e6e6;
-      color: #000000;
+      background: #000000;
+      color: #ffffff;
       padding: 0;
       border: 1px solid #666666;
     }
@@ -113,16 +113,16 @@
     }
 
     .notification-content .summary {
-      color: #000000;
+      color: #ffffff;
       font-weight: 600;
     }
 
     .notification-content .time {
-      color: #666666;
+      color: #999999;
     }
 
     .notification-content .body {
-      color: #333333;
+      color: #cccccc;
     }
 
     .notification > *:last-child > * {
@@ -133,23 +133,23 @@
       margin: 7px;
       padding: 4px;
       border-radius: 50%;
-      color: #ffffff;
-      background-color: #666666;
+      color: #000000;
+      background-color: #999999;
       min-width: 24px;
       min-height: 24px;
     }
 
     .notification-background .close-button:hover {
-      background-color: #000000;
+      background-color: #ffffff;
     }
 
     .notification-background .close-button:active {
-      background-color: #333333;
+      background-color: #cccccc;
     }
 
     .notification .notification-action {
       border-radius: 30px;
-      color: #000000;
+      color: #ffffff;
       border: 1px solid #666666;
       margin: 4px;
       padding: 8px 16px;
@@ -157,16 +157,16 @@
     }
 
     .notification .notification-action {
-      background-color: #cccccc;
+      background-color: #1a1a1a;
     }
 
     .notification .notification-action:hover {
-      background-color: #ffffff;
-      border-color: #000000;
+      background-color: #333333;
+      border-color: #ffffff;
     }
 
     .notification .notification-action:active {
-      background-color: #999999;
+      background-color: #666666;
     }
 
     .notification.critical progress {
@@ -175,7 +175,7 @@
 
     .notification.low progress,
     .notification.normal progress {
-      background-color: #000000;
+      background-color: #ffffff;
     }
 
     .notification progress,
@@ -187,17 +187,17 @@
 
     /* control center */
     .control-center {
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
       border-radius: 12px;
-      background-color: #e6e6e6;
-      color: #000000;
+      background-color: #000000;
+      color: #ffffff;
       padding: 14px;
       border: 1px solid #666666;
     }
 
     .control-center .notification-background {
       border-radius: 8px;
-      border: 1px solid #cccccc;
+      border: 1px solid #333333;
       margin: 4px 10px;
     }
 
@@ -210,15 +210,15 @@
     }
 
     .control-center .widget-title > label {
-      color: #000000;
+      color: #ffffff;
       font-size: 1.3em;
       font-weight: 600;
     }
 
     .control-center .widget-title button {
       border-radius: 30px;
-      color: #000000;
-      background-color: #cccccc;
+      color: #ffffff;
+      background-color: #1a1a1a;
       border: 1px solid #666666;
       padding: 8px 20px;
       margin-left: 8px;
@@ -226,13 +226,13 @@
     }
 
     .control-center .widget-title button:hover {
-      background-color: #ffffff;
-      border-color: #000000;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      background-color: #333333;
+      border-color: #ffffff;
+      box-shadow: 0 2px 6px rgba(255, 255, 255, 0.1);
     }
 
     .control-center .widget-title button:active {
-      background-color: #999999;
+      background-color: #666666;
       transform: scale(0.98);
     }
 
@@ -247,7 +247,7 @@
     }
 
     .control-center .notification-group:focus .notification-background {
-      background-color: #ffffff;
+      background-color: #1a1a1a;
     }
 
     scrollbar slider {
@@ -265,26 +265,26 @@
       padding: 12px 20px;
       border-radius: 30px;
       font-size: 1.3rem;
-      color: #000000;
-      background: #cccccc;
+      color: #ffffff;
+      background: #1a1a1a;
       border: 1px solid #666666;
     }
 
     .widget-dnd > switch {
       font-size: initial;
       border-radius: 30px;
-      background: #999999;
+      background: #666666;
       box-shadow: none;
       min-width: 64px;
       min-height: 32px;
     }
 
     .widget-dnd > switch:checked {
-      background: #333333;
+      background: #cccccc;
     }
 
     .widget-dnd > switch slider {
-      background: #ffffff;
+      background: #000000;
       border-radius: 50%;
       min-width: 28px;
       min-height: 28px;
@@ -292,15 +292,15 @@
 
     /* mpris */
     .widget-mpris-player {
-      background: #cccccc;
+      background: #1a1a1a;
       border-radius: 12px;
-      color: #000000;
+      color: #ffffff;
       border: 1px solid #666666;
       margin: 8px 0;
     }
 
     .mpris-overlay {
-      background-color: #cccccc;
+      background-color: #1a1a1a;
       opacity: 0.9;
       padding: 15px 10px;
     }
@@ -313,18 +313,18 @@
 
     .widget-mpris-title {
       font-size: 1.2rem;
-      color: #000000;
+      color: #ffffff;
       font-weight: 600;
     }
 
     .widget-mpris-subtitle {
       font-size: 1rem;
-      color: #333333;
+      color: #cccccc;
     }
 
     .widget-mpris button {
       border-radius: 30px;
-      color: #000000;
+      color: #ffffff;
       margin: 0 5px;
       padding: 6px 12px;
     }
@@ -334,11 +334,11 @@
     }
 
     .widget-mpris button:hover {
-      background-color: #ffffff;
+      background-color: #333333;
     }
 
     .widget-mpris button:active {
-      background-color: #999999;
+      background-color: #666666;
     }
 
     .widget-mpris button:disabled {
@@ -357,11 +357,11 @@
     .power-buttons button:hover,
     .powermode-buttons button:hover,
     .screenshot-buttons button:hover {
-      background: #ccd0da;
+      background: #333333;
     }
 
     .control-center .widget-label > label {
-      color: #4c4f69;
+      color: #ffffff;
       font-size: 2rem;
     }
 
@@ -378,21 +378,21 @@
     }
 
     .widget-volume label {
-      color: #209fb5;
+      color: #ffffff;
       padding: 0 1rem;
     }
 
     .widget-volume trough highlight {
-      background: #209fb5;
+      background: #ffffff;
     }
 
     .widget-backlight trough highlight {
-      background: #df8e1d;
+      background: #ffffff;
     }
 
     .widget-backlight label {
       font-size: 1.5rem;
-      color: #df8e1d;
+      color: #ffffff;
     }
 
     .widget-backlight .KB {
