@@ -150,6 +150,8 @@
       jq
       colmena
       inetutils
+      dig
+      talosctl
 
       # apps
       ghostty
