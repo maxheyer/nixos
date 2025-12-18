@@ -140,6 +140,18 @@
   };
 
   services.netbird.enable = true;
+
+  services.openssh = {
+    enable = true;
+    openFirewall = false;
+    settings = {
+      PasswordAuthentication = false;
+      PermitRootLogin = "no";
+      PubkeyAcceptedAlgorithms = "+ssh-ed25519-cert-v01@openssh.com,sk-ssh-ed25519@openssh.com,sk-ssh-ed25519-cert-v01@openssh.com";
+    };
+  };
+
+  networking.firewall.interfaces."wt0".allowedTCPPorts = [ 22 ];
   services.resolved = {
     enable = true;
     fallbackDns = [ "1.1.1.1" ];
