@@ -258,6 +258,14 @@
       categories = [ "Music" ];
     };
 
+    xdg.desktopEntries.sunsama = {
+      name = "Sunsama";
+      genericName = "Sunsama";
+      exec = "${pkgs.appimage-run}/bin/appimage-run ./Applications/sunsama.AppImage";
+      terminal = false;
+      categories = [ "Utility" ];
+    };
+
     systemd.user.services.nm-applet = {
       Unit = {
         Description = "Network Manager Applet";
