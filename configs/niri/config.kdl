@@ -203,7 +203,7 @@ binds {
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Layout
 
     layout {
-        gaps 15
+        gaps 5
         center-focused-column "never"
 
         preset-column-widths {
