@@ -92,6 +92,8 @@
       NIXOS_OZONE_WL = "1";
     };
 
+    home.sessionPath = [ "$HOME/.krew/bin" ];
+
     programs.swaylock.enable = true;
 
     programs.yazi.enable = true;
@@ -141,6 +143,8 @@
       fd
       unzip
       kubectl
+      kubelogin-oidc
+      krew
       bluetui
       fastfetch
       claude-code
@@ -152,6 +156,7 @@
       inetutils
       dig
       talosctl
+      jwt-cli
 
       # apps
       ghostty
