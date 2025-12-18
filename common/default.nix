@@ -93,6 +93,7 @@
   #  wget
     git
     vivaldi
+    firefox
     corefonts
     netbird-ui
     pam_u2f
