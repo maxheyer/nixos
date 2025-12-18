@@ -167,6 +167,8 @@
       networkmanagerapplet
       onlyoffice-desktopeditors
       faugus-launcher
+      rustdesk
+      wayvnc
     ];
 
     fonts.fontconfig.enable = true;
