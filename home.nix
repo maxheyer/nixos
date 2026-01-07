@@ -143,6 +143,9 @@
       adwaita-icon-theme
       papirus-icon-theme
       hicolor-icon-theme
+      gsettings-desktop-schemas
+      gtk3
+      librsvg
       font-awesome
       nerd-fonts.blex-mono
       dconf
