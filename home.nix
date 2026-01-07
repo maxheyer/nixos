@@ -44,11 +44,11 @@
     xdg.mimeApps = {
       enable = true;
       defaultApplications = {
-        "text/html" = "vivaldi.desktop";
-        "x-scheme-handler/http" = "vivaldi.desktop";
-        "x-scheme-handler/https" = "vivaldi.desktop";
-        "x-scheme-handler/about" = "vivaldi.desktop";
-        "x-scheme-handler/unknown" = "vivaldi.desktop";
+        "text/html" = "vivaldi-stable.desktop";
+        "x-scheme-handler/http" = "vivaldi-stable.desktop";
+        "x-scheme-handler/https" = "vivaldi-stable.desktop";
+        "x-scheme-handler/about" = "vivaldi-stable.desktop";
+        "x-scheme-handler/unknown" = "vivaldi-stable.desktop";
       };
     };
 
@@ -101,6 +101,8 @@
       ELECTRON_OZONE_PLATFORM_HINT = "auto";
       GTK_THEME = "Adwaita-dark";
       NIXOS_OZONE_WL = "1";
+      BROWSER = "vivaldi";
+      GDK_PIXBUF_MODULE_FILE = "${pkgs.librsvg}/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache";
     };
 
     home.sessionPath = [ "$HOME/.krew/bin" ];
