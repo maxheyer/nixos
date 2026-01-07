@@ -170,15 +170,20 @@
       claude-code
       gemini-cli
       yubikey-manager
+      yubioath-flutter
       kubernetes-helm
       jq
+      yq
       colmena
       inetutils
       dig
       talosctl
       jwt-cli
+      podman-compose
+      s5cmd
 
       # apps
+      nautilus
       ghostty
       pavucontrol
       slack
@@ -189,6 +194,10 @@
       faugus-launcher
       rustdesk
       wayvnc
+      rpi-imager
+      bazecor
+      qpwgraph
+      easyeffects
     ];
 
     fonts.fontconfig.enable = true;
