@@ -151,6 +151,12 @@
     };
   };
 
+  virtualisation.podman = {
+    enable = true;
+    dockerCompat = true;
+    defaultNetwork.settings.dns_enabled = true;
+  };
+
   networking.firewall.interfaces."wt0".allowedTCPPorts = [ 22 ];
   services.resolved = {
     enable = true;
