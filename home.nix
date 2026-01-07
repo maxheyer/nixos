@@ -151,6 +151,9 @@
       dconf
 
       # cli
+      go
+      pulumi
+      pulumiPackages.pulumi-go
       btop
       ripgrep
       fzf
