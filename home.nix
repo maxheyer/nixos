@@ -164,6 +164,7 @@
       kubectl
       kubelogin-oidc
       krew
+      argocd
       bluetui
       fastfetch
       claude-code
