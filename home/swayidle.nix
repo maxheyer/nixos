@@ -13,11 +13,8 @@
         command = "niri msg action power-off-monitors";
       }
     ];
-    events = [
-      {
-        event = "before-sleep";
-        command = "${pkgs.swaylock}/bin/swaylock -f -c 000000";
-      }
-    ];
+    events = {
+      before-sleep = "${pkgs.swaylock}/bin/swaylock -f -c 000000";
+    };
   };
 }
