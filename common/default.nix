@@ -78,7 +78,7 @@
   users.users.max = {
     isNormalUser = true;
     description = "Max";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "dialout" "podman" ];
     packages = with pkgs; [];
     shell = pkgs.fish;
   };
