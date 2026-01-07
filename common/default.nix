@@ -117,6 +117,7 @@
   };
 
   services.pcscd.enable = true;
+  services.udev.packages = [ pkgs.yubikey-personalization ];
 
   services.pipewire = {
       enable = true;
