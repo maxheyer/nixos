@@ -165,6 +165,9 @@
 
   services.xserver.enable = false;
 
+  services.udisks2.enable = true;
+  services.gvfs.enable = true;
+
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
