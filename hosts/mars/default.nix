@@ -18,6 +18,8 @@
     scheduler = "scx_rusty"; 
   };
 
+  hardware.keyboard.qmk.enable = true;
+
   powerManagement.cpuFreqGovernor = "performance";
   hardware.bluetooth = {
     enable = true;
