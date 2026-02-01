@@ -61,6 +61,7 @@ hardware.graphics = {
 
   services.ollama = {
     enable = true;
+    package = pkgs.ollama-cuda;
   };
 
   services.open-webui = {
