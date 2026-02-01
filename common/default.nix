@@ -102,6 +102,11 @@
     corefonts
     netbird-ui
     pam_u2f
+    usbutils
+    qt6.qtwayland
+    qt5.qtwayland
+    btrfs-assistant
+    openssl
   ];
 
   programs.niri.enable = true;
