@@ -1,0 +1,9 @@
+[user]
+	name = Max Heyer
+	email = max@enum.co
+	signingkey = ~/.ssh/max@enum.co-signing-key.pub
+[gpg]
+	format = ssh
+[commit]
+	sshsign = true
+	gpgsign = true

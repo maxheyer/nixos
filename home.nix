@@ -31,6 +31,7 @@
 
     home.file = {
       ".gitconfig".source = ./configs/.gitconfig;
+      ".gitconfig-enum".source = ./configs/.gitconfig-enum;
     };
 
     xdg.configFile = {
