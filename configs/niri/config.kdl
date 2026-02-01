@@ -72,7 +72,7 @@ binds {
     // ─── Applications ───
     MOD+RETURN                          hotkey-overlay-title="Open Terminal: Ghostty" { spawn-sh "ghostty"; }
     MOD+SPACE                           hotkey-overlay-title="Open App Launcher: fuzzel" { spawn-sh "fuzzel"; }
-    MOD+B                               hotkey-overlay-title="Open Browser" { spawn-sh "vivaldi"; }
+    MOD+B                               hotkey-overlay-title="Open Browser" { spawn-sh "firefox"; }
     MOD+N { spawn-sh "swaync-client -t -sw"; }
     // MOD+ALT+L                           hotkey-overlay-title="Lock Screen: swaylock" { spawn-sh "swaylock"; }
 
