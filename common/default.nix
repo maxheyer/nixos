@@ -168,6 +168,7 @@
   services.resolved = {
     enable = true;
     fallbackDns = [ "1.1.1.1" ];
+    llmnr = "false";
   };
 
   services.xserver.enable = false;
