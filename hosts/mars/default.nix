@@ -13,11 +13,6 @@
   nixpkgs.config.allowUnfree = true;
   services.xserver.videoDrivers = [ "nvidia" ];
 
-  services.scx = {
-    enable = true;
-    scheduler = "scx_rusty"; 
-  };
-
   hardware.keyboard.qmk.enable = true;
 
   powerManagement.cpuFreqGovernor = "performance";
@@ -52,7 +47,6 @@ hardware.graphics = {
     modesetting.enable = true;
     nvidiaSettings = true;
     open = false;
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
 
   programs.steam.enable = true;

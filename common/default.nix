@@ -11,7 +11,12 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Use latest kernel.
-  boot.kernelPackages = pkgs.linuxPackages_cachyos;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+
+  hardware.enableRedistributableFirmware = true;
+  hardware.firmware = with pkgs; [
+    linux-firmware
+  ];
 
   boot.kernel.sysctl = {
     "kernel.sched_base_slice_ns" = 3000000;
