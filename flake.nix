@@ -13,6 +13,7 @@
     nixosConfigurations = {
       mars = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
+        specialArgs = { inherit inputs; };
         modules = [
           ./hosts/mars/default.nix
           home-manager.nixosModules.home-manager
