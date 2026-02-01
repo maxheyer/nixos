@@ -27,7 +27,7 @@
     home.username = "max";
     home.homeDirectory = "/home/max";
 
-    home.stateVersion = "24.11"; 
+    home.stateVersion = "24.11";
 
     home.file = {
       ".gitconfig".source = ./configs/.gitconfig;
@@ -41,6 +41,11 @@
       "nvim".source = ./configs/nvim;
       "waybar".source = ./configs/waybar;
     };
+
+    xdg.dataFile."applications/org.freecad.FreeCAD.desktop".text = ''
+      [Desktop Entry]
+      Hidden=true
+    '';
 
     xdg.mimeApps = {
       enable = true;
@@ -106,7 +111,7 @@
       GDK_PIXBUF_MODULE_FILE = "${pkgs.librsvg}/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache";
     };
 
-    home.sessionPath = [ "$HOME/.krew/bin" ];
+    home.sessionPath = [ "$HOME/.krew/bin" "$HOME/.local/bin" ];
 
     programs.swaylock.enable = true;
 
@@ -130,11 +135,12 @@
       mpv
       ffmpeg
       libnotify
-      glib
-      libappindicator
       zenity
+      imagemagick
+      wtype
 
       nodejs
+      bun
       tree-sitter
       gcc
       gnumake
@@ -150,9 +156,13 @@
       font-awesome
       nerd-fonts.blex-mono
       dconf
+      freerdp
 
       # cli
       go
+      cargo
+      pkg-config
+      rustc
       pulumi
       pulumiPackages.pulumi-go
       btop
@@ -169,12 +179,11 @@
       bluetui
       fastfetch
       claude-code
-      gemini-cli
       yubikey-manager
       yubioath-flutter
       kubernetes-helm
       jq
-      yq
+      yq-go
       colmena
       inetutils
       dig
@@ -182,6 +191,14 @@
       jwt-cli
       podman-compose
       s5cmd
+      kubecm
+      net-tools
+      restic
+      cilium-cli
+      glow
+      zola
+      ethtool
+      envsubst
 
       # apps
       nautilus
@@ -191,14 +208,20 @@
       freelens-bin
       logseq
       networkmanagerapplet
+      kdePackages.kdeconnect-kde
       onlyoffice-desktopeditors
       faugus-launcher
-      rustdesk
       wayvnc
       rpi-imager
-      bazecor
+      bazecor-wrapped
       qpwgraph
-      easyeffects
+      spotify
+      spotify-player
+      orca-slicer
+      freecad
+      openscad-unstable
+      blender
+      winboat
     ];
 
     fonts.fontconfig.enable = true;
@@ -296,6 +319,17 @@
       exec = "${pkgs.appimage-run}/bin/appimage-run ./Applications/sunsama.AppImage";
       terminal = false;
       categories = [ "Utility" ];
+    };
+
+    xdg.desktopEntries.freecad = {
+      name = "FreeCAD";
+      genericName = "CAD Application";
+      comment = "Feature based Parametric Modeler";
+      exec = "env QT_QPA_PLATFORM=xcb ${pkgs.freecad}/bin/freecad %F";
+      icon = "org.freecad.FreeCAD";
+      terminal = false;
+      categories = [ "Graphics" "Science" "Engineering" ];
+      mimeType = [ "application/x-extension-fcstd" ];
     };
 
     systemd.user.services.nm-applet = {
