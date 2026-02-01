@@ -105,6 +105,7 @@
   ];
 
   programs.niri.enable = true;
+  programs.kdeconnect.enable = true;
 
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
