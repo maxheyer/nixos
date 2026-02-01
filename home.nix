@@ -314,4 +314,9 @@
         WantedBy = [ "graphical-session.target" ];
       };
     };
-  }
+
+    services.gnome-keyring = {
+      enable = true;
+      components = [ "secrets" "ssh" ];
+    };
+}
