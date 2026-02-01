@@ -42,6 +42,7 @@
   yaml-language-server
   taplo
   marksman
+  markdownlint-cli2
   
   # LSP - Database
   sqls
@@ -93,7 +94,7 @@
   shfmt
   
   # Formatter - SQL
-  sqlfluff
+  #sqlfluff
   pgformatter
   
   # Formatter - Other
