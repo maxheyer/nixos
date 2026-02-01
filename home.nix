@@ -213,7 +213,6 @@
       faugus-launcher
       wayvnc
       rpi-imager
-      bazecor-wrapped
       qpwgraph
       spotify
       spotify-player
