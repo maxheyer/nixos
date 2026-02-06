@@ -55,6 +55,15 @@
         "x-scheme-handler/https" = "firefox.desktop";
         "x-scheme-handler/about" = "firefox.desktop";
         "x-scheme-handler/unknown" = "firefox.desktop";
+        "image/jpeg" = "org.gnome.Shotwell-Viewer.desktop";
+        "image/png" = "org.gnome.Shotwell-Viewer.desktop";
+        "image/gif" = "org.gnome.Shotwell-Viewer.desktop";
+        "image/bmp" = "org.gnome.Shotwell-Viewer.desktop";
+        "image/tiff" = "org.gnome.Shotwell-Viewer.desktop";
+        "image/webp" = "org.gnome.Shotwell-Viewer.desktop";
+        "image/svg+xml" = "org.gnome.Shotwell-Viewer.desktop";
+        "image/x-sony-arw" = "org.gnome.Shotwell.desktop";
+        "image/x-dcraw" = "org.gnome.Shotwell.desktop";
       };
     };
 
@@ -138,6 +147,9 @@
       zenity
       imagemagick
       wtype
+      libraw
+      exiv2
+      tumbler
 
       nodejs
       bun
@@ -199,9 +211,11 @@
       zola
       ethtool
       envsubst
+      awscli2
 
       # apps
       nautilus
+      sushi
       ghostty
       pavucontrol
       slack
@@ -221,6 +235,9 @@
       openscad-unstable
       blender
       winboat
+      darktable
+      shotwell
+      signal-desktop
     ];
 
     fonts.fontconfig.enable = true;
@@ -359,6 +376,8 @@
 
     services.gnome-keyring = {
       enable = true;
-      components = [ "secrets" "ssh" ];
+      components = [ "secrets" ];
     };
+
+    services.ssh-agent.enable = true;
 }
