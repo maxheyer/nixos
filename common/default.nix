@@ -99,6 +99,7 @@
     git
     vivaldi
     firefox
+    google-chrome
     corefonts
     netbird-ui
     pam_u2f
