@@ -320,6 +320,15 @@
       categories = [ "Utility" ];
     };
 
+    xdg.desktopEntries.handy = {
+      name = "Handy";
+      genericName = "Handy";
+      exec = "env LD_PRELOAD=/lib64/libwayland-client.so.0 ${pkgs.appimage-run}/bin/appimage-run /home/max/Applications/Handy.AppImage";
+      icon = "${./icons/handy.png}";
+      terminal = false;
+      categories = [ "Utility" ];
+    };
+
     xdg.desktopEntries.freecad = {
       name = "FreeCAD";
       genericName = "CAD Application";
