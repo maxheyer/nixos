@@ -196,7 +196,7 @@ binds {
     // MOD+SHIFT+P                         { power-off-monitors; } // Turn off screens (useful for OLED or privacy)
     MOD+O                               repeat=false { toggle-overview; }
 
-    CTRL+SPACE                          { spawn-sh "pkill -SIGUSR2 handy"; }
+    CTRL+SPACE repeat=false             { spawn-sh "pkill -SIGUSR2 handy"; }
 }
 
 // ────────────── Startup Applications ──────────────
