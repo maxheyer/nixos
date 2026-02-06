@@ -173,7 +173,7 @@
   networking.firewall.interfaces."wt0".allowedTCPPorts = [ 22 ];
   services.resolved = {
     enable = true;
-    fallbackDns = [ "1.1.1.1" ];
+    settings.Resolve.FallbackDNS = [ "1.1.1.1" ];
     llmnr = "false";
   };
 
