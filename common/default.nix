@@ -175,8 +175,10 @@
   networking.firewall.interfaces."wt0".allowedTCPPorts = [ 22 ];
   services.resolved = {
     enable = true;
-    settings.Resolve.FallbackDNS = [ "1.1.1.1" ];
-    llmnr = "false";
+    settings.Resolve = {
+      FallbackDNS = [ "1.1.1.1" ];
+      LLMNR = "false";
+    };
   };
 
   services.xserver.enable = false;
