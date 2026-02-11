@@ -9,6 +9,10 @@
 
   networking.hostName = "mars";
 
+  boot.kernelPackages = pkgs.lib.mkForce pkgs.linuxPackages_zen;
+  boot.tmp.useTmpfs = true;
+  services.fstrim.enable = true;
+
   nixpkgs.config.allowUnfree = true;
   services.xserver.videoDrivers = [ "nvidia" ];
 
