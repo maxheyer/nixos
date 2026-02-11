@@ -128,6 +128,7 @@ hardware.graphics = {
       "--exclude=**/.local/share/Trash"
       "--exclude=**/.local/share/Steam"
       "--exclude=**/.local/share/containers/"
+      "--exclude=**/.local/share/bottles/bottles/"
       "--exclude=**/Faugus"
       "--exclude=**/.npm"
       "--exclude=**/.cargo"

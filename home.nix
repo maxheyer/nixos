@@ -224,7 +224,7 @@
       networkmanagerapplet
       kdePackages.kdeconnect-kde
       onlyoffice-desktopeditors
-      faugus-launcher
+      bottles
       wayvnc
       rpi-imager
       qpwgraph
