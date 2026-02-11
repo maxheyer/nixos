@@ -9,13 +9,13 @@
 
   networking.hostName = "mars";
 
-
   nixpkgs.config.allowUnfree = true;
   services.xserver.videoDrivers = [ "nvidia" ];
 
   hardware.keyboard.qmk.enable = true;
 
   powerManagement.cpuFreqGovernor = "performance";
+
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
@@ -44,6 +44,7 @@
   };
 
   hardware.nvidia = {
+    powerManagement.enable = true;
     modesetting.enable = true;
     nvidiaSettings = true;
     open = false;
