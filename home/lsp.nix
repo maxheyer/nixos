@@ -72,7 +72,7 @@
   prettier
   
   # Formatter - Nix
-  nixfmt-rfc-style
+  nixfmt
   alejandra
   nixpkgs-fmt
   
