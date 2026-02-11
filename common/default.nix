@@ -108,6 +108,7 @@
     usbutils
     qt6.qtwayland
     qt5.qtwayland
+    kdePackages.polkit-kde-agent-1
     btrfs-assistant
     openssl
   ];
@@ -117,6 +118,7 @@
 
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
+  security.polkit.enable = true;
   security.pam.services = {
     swaylock = {};
     sudo.u2fAuth = true;
