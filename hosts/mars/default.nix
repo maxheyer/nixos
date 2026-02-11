@@ -81,27 +81,26 @@
     package = pkgs.mullvad-vpn;
   };
 
-  services.snapper.configs.home = {
-    SUBVOLUME = "/home";
+  services.udev.extraRules = ''
+    ACTION=="add|change", KERNEL=="nvme[0-9]*", ATTR{queue/scheduler}="none"
+  '';
 
-    TIMELINE_CREATE = true;
-    TIMELINE_CLEANUP = true;
+  services.snapper = {
+    snapshotInterval = "hourly";
+    cleanupInterval = "1d";
 
-    TIMELINE_MIN_AGE = "1800";
-    TIMELINE_LIMIT_HOURLY = "24";
-    TIMELINE_LIMIT_DAILY = "7";
-    TIMELINE_LIMIT_WEEKLY = "4";
-    TIMELINE_LIMIT_MONTHLY = "0";
-
-    IGNORE_PATTERNS = [
-      ".cache"
-      ".local/share/Trash"
-      ".npm"
-      ".cargo"
-      "node_modules"
-      "target"
-      "vendor"
-    ];
+    configs.home = {
+      SUBVOLUME = "/home";
+      ALLOW_USERS = [ "max" ];
+      TIMELINE_CREATE = true;
+      TIMELINE_CLEANUP = true;
+      TIMELINE_MIN_AGE = 1800;
+      TIMELINE_LIMIT_HOURLY = 24;
+      TIMELINE_LIMIT_DAILY = 7;
+      TIMELINE_LIMIT_WEEKLY = 4;
+      TIMELINE_LIMIT_MONTHLY = 3;
+      TIMELINE_LIMIT_YEARLY = 0;
+    };
   };
 
   services.restic.backups.maxHome = {
