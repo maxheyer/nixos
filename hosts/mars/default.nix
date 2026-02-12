@@ -11,6 +11,11 @@
 
   boot.kernelPackages = pkgs.lib.mkForce pkgs.linuxPackages_zen;
   boot.tmp.useTmpfs = true;
+  boot.kernelParams = [
+    "nvidia.NVreg_PreserveVideoMemoryAllocations=1"
+    "nvidia.NVreg_EnableS0ixPowerManagement=0" 
+  ];
+  boot.blacklistedKernelModules = [ "spd5118" ]; 
   services.fstrim.enable = true;
 
   nixpkgs.config.allowUnfree = true;
@@ -51,6 +56,7 @@
     modesetting.enable = true;
     nvidiaSettings = true;
     open = false;
+    nvidiaPersistenced = true;
   };
 
   programs.steam.enable = true;
