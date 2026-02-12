@@ -212,6 +212,8 @@
       ethtool
       envsubst
       awscli2
+      age
+      sops
 
       # apps
       nautilus
